@@ -13,3 +13,18 @@ This file for that I didnt know or woth to mention
          (Null) to remove value
          (undefined) no value have been sit yet
          (bigint) for larg integer 
+
+(Arrays) to declare an Array look like
+        let names = ["spider" , "wessam" ,"bat"];
+        and we can print it like this 
+        console.log(names)
+
+(++x) x=1 console.log(++x) add one then print //print 1
+(x++) x=1 console.log(x++) print then add one //print 2     
+
+(===) to Compare type and value
+(==)  to Compare value
+
+(condition ? value if true : value if false;) Ternary Operator
+
+(promot) to ask for a value 
