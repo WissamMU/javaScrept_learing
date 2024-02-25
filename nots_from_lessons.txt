@@ -1,0 +1,15 @@
+This file for that I didnt know or woth to mention
+
+(;) Semicolon is optional but its better to use it because some time u need it 
+
+(let) used to declare a variable
+      (,) we can use to declare more then one variable
+      like let username = "wessam" , age = 21
+
+(const) we dont need (let) to declare a const value
+        the way to name const LIKE_THIS so other know that its a const value
+
+(typeof) to check for variable type
+         (Null) to remove value
+         (undefined) no value have been sit yet
+         (bigint) for larg integer 
