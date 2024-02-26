@@ -1,3 +1,8 @@
+
+
+
+
+
 //lesson 1.3
 /*let count = 0;
 //while (count <5) console.log("spider" , ++count );
@@ -29,6 +34,27 @@ let boys = ["bat guy",'spider guy','silver guy']
 
 for (let index in boys) console.log(index);
 for (let members of boys) console.log(members)
+
+//declare function can be used anywhere 
+function oddNumbers(...numbersToGetOdd)//using rest
+{
+   for (let i = 0 ; i <= numbersToGetOdd ; i++)
+   {
+      if (i % 2) console.log(i);
+   }
+}
+// Expression function can be used after only
+let end = function()
+{
+   console.log("end of everything");
+}
+//arrow function for one line function let func = (argl, arg2, ...argN) => expression
+
+//setTimeout(functionRef, delay, param1, param2,  …,  paramN)
+setTimeout(oddNumbers,3000,10);
+
+//setInterval(func, delay, arg1, arg2, …,  argN)
+setInterval(end ,3000)
 */
 
 

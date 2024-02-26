@@ -1,30 +1,58 @@
 This file for that I didnt know or woth to mention
 
-(;) Semicolon is optional but its better to use it because some time u need it 
+(;)             Semicolon is optional but its better to use it because some time u need it 
 
-(let) used to declare a variable
-      (,) we can use to declare more then one variable
-      like let username = "wessam" , age = 21
+(let)           used to declare a variable
+                (,) we can use to declare more then one variable
+                like let username = "wessam" , age = 21
 
-(const) we dont need (let) to declare a const value
-        the way to name const LIKE_THIS so other know that its a const value
+(const)         we dont need (let) to declare a const value
+                the way to name const LIKE_THIS so other know that its a const value
 
-(typeof) to check for variable type
-         (Null) to remove value
-         (undefined) no value have been sit yet
-         (bigint) for larg integer 
+(typeof)        to check for variable type
+                (Null) to remove value
+                (undefined) no value have been sit yet
+                (bigint) for larg integer 
 
-(Arrays) to declare an Array look like
-        let names = ["spider" , "wessam" ,"bat"];
-        and we can print it like this 
-        console.log(names)
+(Arrays)        to declare an Array look like
+                let names = ["spider" , "wessam" ,"bat"];
+                and we can print it like this 
+                console.log(names)
+(in)            for index : for (let index in boys) console.log(index);
+(of)            for items : for (let members of boys) console.log(members)
 
-(++x) x=1 console.log(++x) add one then print //print 1
-(x++) x=1 console.log(x++) print then add one //print 2     
+(++x)           x=1 console.log(++x) add one then print //print 1
+(x++)           x=1 console.log(x++) print then add one //print 2     
 
-(===) to Compare type and value
-(==)  to Compare value
+(===)           to Compare type and value
+(==)            to Compare value
 
-(condition ? value if true : value if false;) Ternary Operator
+(condition ?    value if true : value if false;) Ternary Operator
 
-(promot) to ask for a value 
+(promot)        to ask for a value 
+
+if(number % 2)  this will happen if The remainder is != 0
+
+(do{} while)    happen at least one time even if the condition didnt fulfilled
+(while())       happen only if the condition fulfilled
+
+(break)         live the loop
+(continue)      go to the start of the loop
+
+(function)      dont need to declare variable type
+                (declare) function can be used anywhere 
+                function oddNumbers()
+                (Expression) function can be used after only
+                let end = function()
+(arrow function)            : let func = (argl, arg2, ...argN) => expression
+                if one arg : let func = arg => expression
+                if no  arg : let func = () => expression
+(argument)      contain all the arg that got passed to the function
+(rest)          contain the rest of the argument but have the ability have an extra arg before it           
+
+(setTimeout)    used for getting function after time 
+                setTimeout(functionRef((with out())), delay, param1, param2, /* …, */ paramN)
+(clearTimeOut)  to stop setTimeOut if its a variable like let setTimeOut               
+(setInterval)   used to get the same function every delay between calls  
+                setInterval(func, delay, arg1, arg2, /* …, */ argN)
+(clearInterval) to stop setInterval if its a variable like let setInterval               
