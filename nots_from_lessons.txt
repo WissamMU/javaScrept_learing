@@ -14,13 +14,6 @@ This file for that I didnt know or woth to mention
                 (undefined) no value have been sit yet
                 (bigint) for larg integer 
 
-(Arrays)        to declare an Array look like
-                let names = ["spider" , "wessam" ,"bat"];
-                and we can print it like this 
-                console.log(names)
-(in)            for index : for (let index in boys) console.log(index);
-(of)            for items : for (let members of boys) console.log(members)
-
 (++x)           x=1 console.log(++x) add one then print //print 1
 (x++)           x=1 console.log(x++) print then add one //print 2     
 
@@ -55,4 +48,31 @@ if(number % 2)  this will happen if The remainder is != 0
 (clearTimeOut)  to stop setTimeOut if its a variable like let setTimeOut               
 (setInterval)   used to get the same function every delay between calls  
                 setInterval(func, delay, arg1, arg2, /* …, */ argN)
-(clearInterval) to stop setInterval if its a variable like let setInterval               
+(clearInterval) to stop setInterval if its a variable like let setInterval 
+
+(Arrays)        to declare an Array look like
+                let names = ["spider" , "wessam" ,"bat"];
+                and we can print it like this 
+                console.log(names)
+(in)            for index : for (let index in boys) console.log(index);
+(of)            for items : for (let members of boys) console.log(members)
+adding to the array
+(arrayname[4])  used if we how long the array is
+                we can use this way if we dont how long is it arrayname[arrayname.length]
+(.push)         add the the end of the array
+(.unshift)      use to add to the array 
+(.splice)       to add to the middel of the array (method) Array<string>.splice(start: number, deleteCount?: number | undefined): string[] (+1 overload
+                remover form the middle .splice(startin form , how many items to remove)
+(.shift)        remove first item
+(.pop)          remove last item
+(.slice)        to get new array .slice(from,to) or .slice(from) take all the items form the poitnt untill the end or .slice to get a copy
+(.concat)       to add another array
+                console.log(NicNames.concat(PartNicNames))//print both array
+                console.log(NicNames); //print one array
+(.indexOf)      for getting first index of a value -1 mean dosnt have the item
+(.lastindexOf)  for getting Last index of a value -1 mean dosnt have the item
+(.findindexOf)  To get the index of the first item that fulfilled the condition
+(.find)         To get the first item that fulfilled the condition
+(.filter)       To get all the items that fulfilled the condition
+
+
