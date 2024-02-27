@@ -75,4 +75,6 @@ adding to the array
 (.find)         To get the first item that fulfilled the condition
 (.filter)       To get all the items that fulfilled the condition
 
+(Objects)       to make an Object let ObjectName = {} //leteral way
+(Constructor)   function Person(name,age,gender) {this.name = name; this.age=age ; this.gender = gender;}
 

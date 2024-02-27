@@ -1,5 +1,16 @@
+//lessone 1.5 (objects)
+let person ={};//baisc Objects the leteral way
+//Constructor 
+function Person(name,age,gender)
+{
+   this.name = name; this.age=age ; this.gender = gender;
+   this.hello = function(){console.log('Hello ',name,'you are ',age,'years old')};
+}
+let person1 = new Person('spider',21,'male');
+console.log(person1);
+
 //lesson 1.4 (arrays)
-let NicNames = ['spider','bat','silver'];
+/*let NicNames = ['spider','bat','silver'];
 console.log(NicNames);
 //to add to the array use .unshift
 NicNames.unshift('dex');
@@ -51,7 +62,7 @@ console.log(notOne);
 //To get all the items that fulfilled the condition
 let notOne2 = ones.filter(NOTONE => NOTONE >= 2);
 console.log(notOne2);
-
+*/
 
 //lesson 1.3
 /*let count = 0;
