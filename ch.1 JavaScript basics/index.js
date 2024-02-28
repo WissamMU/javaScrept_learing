@@ -1,5 +1,5 @@
 //lessone 1.5 (objects)
-let person ={};//baisc Objects the leteral way
+/*let person ={};//baisc Objects the leteral way
 //Constructor 
 function Person(name,age,gender)
 {
@@ -8,6 +8,23 @@ function Person(name,age,gender)
 }
 let person1 = new Person('spider',21,'male');
 console.log(person1);
+*/
+
+//Primitive Types (String - Number - Boolean - Null )
+//Reference Types (Object - Function - Array)
+//////Primitive type gets saved by the value,
+////// meanwhile they Reference type get saved by the location in the memory
+let OldValue = 1;
+let NewValue = OldValue;
+OldValue = 2;
+console.log(OldValue ,'    ',NewValue);
+//print 2 '    ' 1;
+
+let oldObject = { numBer : 'one'};
+let newObject = oldObject ;
+oldObject.numBer = 'two';
+// now both of them equal newObject {numBer: 'two'} oldObject {numBer: 'two'}
+
 
 //lesson 1.4 (arrays)
 /*let NicNames = ['spider','bat','silver'];
@@ -117,7 +134,6 @@ setTimeout(oddNumbers,3000,10);
 //setInterval(func, delay, arg1, arg2, …,  argN)
 setInterval(end ,3000)
 */
-
 
 //lesson 1.1 1.2
 /*let userName;
