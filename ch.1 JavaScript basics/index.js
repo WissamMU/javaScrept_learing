@@ -1,3 +1,21 @@
+//lesson 1.6 (classes)
+class Person {
+   constructor(name){
+   this.name = name;}
+   hello(){
+   console.log( 'Hello World!'); } 
+   static password(){
+      console.log('123456789');
+   }
+   }
+let person = new Person('wessam');
+
+
+
+
+
+
+
 //lessone 1.5 (objects)
 /*let person ={};//baisc Objects the leteral way
 //Constructor 
@@ -8,7 +26,19 @@ function Person(name,age,gender)
 }
 let person1 = new Person('spider',21,'male');
 console.log(person1);
-*/
+
+//To access a value inside an Object 
+console.log(Person.name);
+//or we can Identify a verabele and get access to the value
+const TheName = 'name';
+console.log(Person[TheName]);
+
+//and we can chaing a value like this 
+Person.name = 'bat';
+//to add new feature ObjectName.fuatureName
+Person.spiders= 'sup man';
+//and for deleting 
+delete Person.spiders;
 
 //Primitive Types (String - Number - Boolean - Null )
 //Reference Types (Object - Function - Array)
@@ -25,6 +55,30 @@ let newObject = oldObject ;
 oldObject.numBer = 'two';
 // now both of them equal newObject {numBer: 'two'} oldObject {numBer: 'two'}
 
+
+
+function Cats(color , age)
+{
+   this.color = color;
+   this.age = age; 
+   let id = color + '_' + age;
+   Object.defineProperty(this,id,{
+      get : function() {return id;},
+      set: function(value)
+      {
+         if (!value) throw new Error('Wrong Id') ;
+         id = value;
+      }
+   })
+
+}
+//we use prototype to save space in program if the 
+//prototype is Primitive type then it save the value for every son alone
+//but if it is Reference the value is same for evey son
+const cat1 = new Cats;
+const cat2 = new Cats;
+Cats.prototype.hello = function(){console.log('hello')}
+*/
 
 //lesson 1.4 (arrays)
 /*let NicNames = ['spider','bat','silver'];

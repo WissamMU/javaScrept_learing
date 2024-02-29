@@ -54,8 +54,8 @@ if(number % 2)  this will happen if The remainder is != 0
                 let names = ["spider" , "wessam" ,"bat"];
                 and we can print it like this 
                 console.log(names)
-(in)            for index : for (let index in boys) console.log(index);
-(of)            for items : for (let members of boys) console.log(members)
+(for...in)      for index : for (let index in boys) console.log(index);
+(for...of)      for items : for (let members of boys) console.log(members)
 adding to the array
 (arrayname[4])  used if we how long the array is
                 we can use this way if we dont how long is it arrayname[arrayname.length]
@@ -77,4 +77,73 @@ adding to the array
 
 (Objects)       to make an Object let ObjectName = {} //leteral way
 (Constructor)   function Person(name,age,gender) {this.name = name; this.age=age ; this.gender = gender;}
+access a value inside an Object
+                (ObjectName.valueName)  To access a value inside an Object 
+                or we can Identify a verabele and get access to the value
+                const TheName = 'name';
+                Person[TheName]
+chaing a value inside an Object
+                we can chaing a value like this 
+                Person.name = 'bat';
+                to add new feature ObjectName.fuatureName
+                Person.spiders= 'sup man';
+for deleting 
+                delete Person.spiders;
+(for...in)      used for fuatureNames in Object ex for (item in ObjectName) 
+                item give us fuatureName
+                ObjectName[item] give us fuature value
+                we can get the fuature and the value with out function
+                if(typeof ObjectName[item] 'function') continue; or we can use this
+                const items= Object.items(ObjectName);
+                and for getting one fuature we use 
+                if( 'fuatureName' in ObjectName)
+(Abstract)      if we didnt do this. in function and we used let for verabele insted we make Abstract ver and can only be used only in the function
 
+Getters and Setters
+                Object.defineProperty(obj, prop, descriptor)
+                Parameter: This method accepts three parameters as mentioned above and described below:
+                Obj: This parameter holds the Object on which the user is going to define the property.
+                Prop: This parameter holds the name of a property that is going to be defined or modified.
+                Descriptor: This parameter holds the descriptor for the property being defined or modified.
+                Return Value: This method returns the object which is passed as the argument to the function.
+(get)           get : function() {return id;} to return Abstract method 
+(set)           set: function(value) {if (!value) throw new Error('Wrong Id') ;id = value;}
+                used for chaing Abstract method
+(prototype)
+                we use prototype to save space in program if the 
+                prototype is Primitive type then it save the value for every son alone
+                but if it is Reference the value is same for evey son
+                const son1 = new son;
+                const son2 = new son;
+                son.prototype.hello = function(){console.log('hello')}
+                
+(Reference and Primitive Types)
+                Primitive Types (String - Number - Boolean - Null )
+                Reference Types (Object - Function - Array)
+                Primitive type gets saved by the value, meanwhile they Reference type get saved by the location in the memory
+                let OldValue = 1;
+                let NewValue = OldValue;
+                OldValue = 2;
+                console.log(OldValue ,'    ',NewValue);
+                //print 2 '    ' 1;
+
+                let oldObject = { numBer : 'one'};
+                let newObject = oldObject ;
+                oldObject.numBer = 'two';
+                now both of them equal newObject {numBer: 'two'} oldObject {numBer: 'two'}
+
+(classes)       just a better function 
+                baisc class
+                class Person {
+                constructor(name){
+                this.name = name;}
+                hello(){
+                console.log( 'Hello World!'); } 
+                }
+(static)        used to make a variable for calss and can by used by the class      
+                if we had class contain static in it like this 
+                    static password(){
+                    console.log('123456789');
+                }
+                to get to the variable like this 
+                ClassName.StaticMethodName();
