@@ -1,4 +1,8 @@
+'use strict'
+
+
 //lesson 1.6 (classes)
+/*
 class Person {
    constructor(name){
    this.name = name;}
@@ -10,10 +14,40 @@ class Person {
    }
 let person = new Person('wessam');
 
+//better way for getter and setter
+//note privite is 
+class someone{
+   //_Name used for naming privite and protected variable 
+   constructor(name,age){
+      this._name = name;
+      this._age = age;
+   }
+   get age() {return this._age;}
+   set name(age) {
+      if (age <1 ) throw new Error('invaled age!');
+      this._age = age;
+   }
+}
+let SomeOne = new someone('spider',2);
 
 
-
-
+//inhertance
+class person {
+   constructor(name,age){
+      this.name = name;
+      this.age = age;
+   }
+   hello(){
+      console.log(
+         `welcome \nname : ${this.name}\nage : ${this.age} `);
+   }
+}
+class studint extends person {
+   constructor(name,age,level){
+      super(name,age);
+      this.level = level;
+   }
+}*/
 
 
 //lessone 1.5 (objects)

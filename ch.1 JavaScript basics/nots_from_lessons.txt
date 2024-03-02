@@ -79,7 +79,7 @@ adding to the array
 (Constructor)   function Person(name,age,gender) {this.name = name; this.age=age ; this.gender = gender;}
 access a value inside an Object
                 (ObjectName.valueName)  To access a value inside an Object 
-                or we can Identify a verabele and get access to the value
+                or we can Identify a variable and get access to the value
                 const TheName = 'name';
                 Person[TheName]
 chaing a value inside an Object
@@ -97,7 +97,7 @@ for deleting
                 const items= Object.items(ObjectName);
                 and for getting one fuature we use 
                 if( 'fuatureName' in ObjectName)
-(Abstract)      if we didnt do this. in function and we used let for verabele insted we make Abstract ver and can only be used only in the function
+(Abstract)      if we didnt do this. in function and we used let for variable insted we make Abstract ver and can only be used only in the function
 
 Getters and Setters
                 Object.defineProperty(obj, prop, descriptor)
@@ -109,6 +109,23 @@ Getters and Setters
 (get)           get : function() {return id;} to return Abstract method 
 (set)           set: function(value) {if (!value) throw new Error('Wrong Id') ;id = value;}
                 used for chaing Abstract method
+(better way to use)
+                we can use Getters and setters in another way with out Object.defineProperty(obj, prop, descriptor)
+                class someone{
+(_Name)         used for naming privite and protected variable 
+                constructor(name,age){
+                    this._name = name;
+                    this._age = age;
+                }
+                get age() {return this._age;}
+                set name(age) {
+                    if (age <1 ) throw new Error('invaled age!');
+                    this._age = age;
+                }
+                }
+(protected)     if we dont have setters
+(privite)       if we dont have Getters and Setters
+
 (prototype)
                 we use prototype to save space in program if the 
                 prototype is Primitive type then it save the value for every son alone
@@ -147,3 +164,10 @@ Getters and Setters
                 }
                 to get to the variable like this 
                 ClassName.StaticMethodName();
+
+(strict mod)    we use it to get the errors that dosnt stop the program and for using 'use strict' in the start of the code
+($varName)      for printing a var inside a String NEED TO HAVE `FOR THE TEXT`
+
+(Ingertance)    Used four classes that we need to use more than once. They have the same original value, but they branch after it
+                to use class classSonName extends classFatherName {}
+(super)         used to get the the variable form the father 
