@@ -170,4 +170,14 @@ Getters and Setters
 
 (Ingertance)    Used four classes that we need to use more than once. They have the same original value, but they branch after it
                 to use class classSonName extends classFatherName {}
-(super)         used to get the the variable form the father 
+(super)         used to get the the variable form the father       super(name,age);
+
+Overriding Method
+                1.The existence of an inheritance relationship extends.
+                2.The method must have the same name as the father class.
+                3.The type of the return value must be the same as the type of the return value of the parent class method.
+                just write the name of the method for overloading in the son class
+instanceof
+                The instanceof keyword checks whether an object is an instance of a specific class or an interface
+                The instanceof keyword compares the instance with type
+                The return value is either true or false

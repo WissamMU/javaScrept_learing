@@ -30,7 +30,7 @@ class someone{
 }
 let SomeOne = new someone('spider',2);
 
-
+*/
 //inhertance
 class person {
    constructor(name,age){
@@ -39,15 +39,19 @@ class person {
    }
    hello(){
       console.log(
-         `welcome \nname : ${this.name}\nage : ${this.age} `);
-   }
+         `welcome \nname : ${this.name}\nage : ${this.age} `);}
 }
 class studint extends person {
    constructor(name,age,level){
       super(name,age);
       this.level = level;
    }
-}*/
+   static hello(){
+      console.log(
+         `welcome \nname : ${this.name}\nage : ${this.age}\ntype:${this.level} `);}
+}
+let Studint = new studint('wessam',11,'studint')
+
 
 
 //lessone 1.5 (objects)
