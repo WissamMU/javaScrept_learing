@@ -181,3 +181,25 @@ instanceof
                 The instanceof keyword checks whether an object is an instance of a specific class or an interface
                 The instanceof keyword compares the instance with type
                 The return value is either true or false
+
+(try and catch)
+                for used for errors
+                try {   hello;} catch(errors){console.log(errors);}
+(throw)         used to make a custom error can by a text number Boolean or an object
+(isNaN)         to check if the var is number or not 
+
+(promise)
+                A JavaScript Promise object can be: Pending  Fulfilled  Rejected
+                The Promise object supports two properties: state and result.
+                While a Promise object is "pending" (working), the result is undefined.
+                When a Promise object is "fulfilled", the result is a value. 
+                When a Promise object is "rejected", the result is an error object.
+(.then)         if the promise fulfilled //we can use return after then to do .then again
+(.catch)        if the promise rejected
+(async and await)
+                async makes a function return a Promise
+                await makes a function wait for a Promise
+                The await keyword can only be used inside an async function
+                The await keyword makes the function pause the execution and wait for a resolved promise before it continues
+                (look in the code for exsample (async and await) to find it)
+                for errors we use try and catch

@@ -1,4 +1,35 @@
 'use strict'
+//lesson 1.7 (errors)
+//try and catch for used for errors
+try {
+   hello;
+}catch(errors){
+   console.log(errors);
+}
+//(promise)
+//                A JavaScript Promise object can be: Pending  Fulfilled  Rejected
+//                The Promise object supports two properties: state and result.
+//                While a Promise object is "pending" (working), the result is undefined.
+//                When a Promise object is "fulfilled", the result is a value. 
+//               When a Promise object is "rejected", the result is an error object.
+//(.then)         if the promise fulfilled
+//(.catch)        if the promise rejected
+let wait = time => new Promise(
+(resolve,reject) =>{
+   if(time>5000) reject("time need to be less then 5000ms");
+   setTimeout(resolve,time);
+}
+);
+wait(6000).then(()=> console.log('hello')).catch(err=>console.log(err))
+//async and await
+async function HelloWorld(){
+   await wait(2333);//wait for the callback function then continue
+   console.log('Hello');
+   await wait(3333);//after waiting in the first one wait for this one 
+   console.log('World!');
+}
+HelloWorld();
+
 
 
 //lesson 1.6 (classes)
@@ -30,7 +61,7 @@ class someone{
 }
 let SomeOne = new someone('spider',2);
 
-*/
+
 //inhertance
 class person {
    constructor(name,age){
@@ -51,7 +82,7 @@ class studint extends person {
          `welcome \nname : ${this.name}\nage : ${this.age}\ntype:${this.level} `);}
 }
 let Studint = new studint('wessam',11,'studint')
-
+*/
 
 
 //lessone 1.5 (objects)
