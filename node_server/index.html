@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h>Hello World! boys</h>
+    <script>
+        async function fetchUsers(){
+            try{
+                const response = await fetch('http://localhost:300/user');
+                let users = await response.json();
+                console.log(users);
+            }catch(e){
+                console.log('Error',e);
+            }
+        }
+        /*fetch('http://localhost:3000/user')
+            .then(response => response.json())
+            .then(users => console.log(users))
+            .catch(error => console.log('Error',error));*/
+    </script>
+</body>
+</html>
