@@ -8,8 +8,11 @@ app.get('/',(req,res) => {
 
 app.get('/user',(req,res) => res.json([
     {id:1 , name: 'wessam' , email:'wessam@javascript.com'},
-    {id:1 , name: 'bat' , email:'bat@javascript.com'},
-    {id:1 , name: 'silver' , email:'silver@javascript.com'},
-]))
+    {id:2 , name: 'bat' , email:'bat@javascript.com'},
+    {id:3 , name: 'silver' , email:'silver@javascript.com'},
+]));
+app.get('/testing',(req,res) => res.json([
+    {help:'me',noIDea:'what is this',orHow:'it workd'},
+]));
 
 app.listen(3000,()=>console.log('server listen is 3000'));
