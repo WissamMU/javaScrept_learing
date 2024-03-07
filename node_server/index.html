@@ -7,7 +7,29 @@
 </head>
 <body>
     <h>Hello World! boys</h>
+    <form id="formElem">
+        <input id="formName" type = "text" name = "name"/>
+        <input id = "formEmail" type = "text" name = "email"/>
+        <input type="submit"/>
+    </form>
     <script>
+        formElem.onsubmit = async e => {
+            e.preventDefault();
+            const data = {
+                name: formName.value,
+                email: formEmail.value
+            };
+            //console.log(data);
+            const response = await fetch('http://localhost:3000/user',{
+                method:'POST',
+                headers:{
+                    'Cotent-Type':'application/json'
+                },
+            });
+            const result = await response.json();
+            alert(result.message);
+            
+        };
         async function fetchUsers(){
             try{
                 const response = await fetch('http://localhost:300/user');

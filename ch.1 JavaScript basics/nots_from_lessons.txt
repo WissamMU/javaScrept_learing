@@ -202,4 +202,4 @@ instanceof
                 The await keyword can only be used inside an async function
                 The await keyword makes the function pause the execution and wait for a resolved promise before it continues
                 (look in the code for exsample (async and await) to find it)
-                for errors we use try and catch
+                for errors we use try and catch   
