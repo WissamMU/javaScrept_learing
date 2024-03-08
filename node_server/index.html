@@ -12,6 +12,7 @@
         <input id="formEmail" type="text" name="email">
         <input type="submit">
       </form>
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script>
         formElem.onsubmit = async e => {
             e.preventDefault();
@@ -33,13 +34,16 @@
         };
         async function fetchUsers(){
             try{
-                const response = await fetch('http://localhost:3000/user');
+                const response = await axios.get('http://localhost:3000/user');
+                console.log(response.data);
+                /*const response = await fetch('http://localhost:3000/user');
                 let users = await response.json();
-                console.log(users);
+                console.log(users);*/
             }catch(e){
                 console.log('Error',e);
             }
         }
+        fetchUsers();
     </script>
 </body>
 </html>

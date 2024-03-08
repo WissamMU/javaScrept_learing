@@ -31,8 +31,7 @@ app.post('/hello',(req,res) => {
     res.status(201).send('post');
 });
 
-// PUT
-// DELET
+
 
 
 app.get('/',(req,res) => {
