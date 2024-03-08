@@ -1,6 +1,27 @@
 const express = require('express');
+//we can also use 
+//import express  from 'express';
 
 const app = express();
+app.use(express.json());
+
+let hello = [] ;
+
+// http methods
+// GET - Retrive data
+// app.get('Loction', arraw function)
+app.get('/hello',(req,res) => {
+    res.send('get');
+});
+
+// POST - crate data 
+app.post('/hello',(req,res) => {
+    res.send('post')
+});
+
+// PUT
+// DELET
+
 
 app.get('/',(req,res) => {
     res.sendFile('index.html' , {root: __dirname });
