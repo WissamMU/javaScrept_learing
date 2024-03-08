@@ -8,10 +8,10 @@
 <body>
     <h>Hello World! boys</h>
     <form id="formElem">
-        <input id="formName" type = "text" name = "name"/>
-        <input id = "formEmail" type = "text" name = "email"/>
-        <input type="submit"/>
-    </form>
+        <input id="formName" type="text" name="name">
+        <input id="formEmail" type="text" name="email">
+        <input type="submit">
+      </form>
     <script>
         formElem.onsubmit = async e => {
             e.preventDefault();
@@ -25,6 +25,7 @@
                 headers:{
                     'Cotent-Type':'application/json'
                 },
+                body: JSON.stringify(data)
             });
             const result = await response.json();
             alert(result.message);
@@ -32,18 +33,13 @@
         };
         async function fetchUsers(){
             try{
-                const response = await fetch('http://localhost:300/user');
+                const response = await fetch('http://localhost:3000/user');
                 let users = await response.json();
                 console.log(users);
             }catch(e){
                 console.log('Error',e);
             }
         }
-        /*fetch('http://localhost:3000/user')
-            .then(response => response.json())
-            .then(users => console.log(users))
-            .catch(error => console.log('Error',error));*/
-            src ="index.js"
     </script>
 </body>
 </html>

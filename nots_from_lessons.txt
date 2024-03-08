@@ -37,7 +37,8 @@ if(number % 2)  this will happen if The remainder is != 0
                 function oddNumbers()
                 (Expression) function can be used after only
                 let end = function()
-(arrow function)            : let func = (argl, arg2, ...argN) => expression
+(arrow function) 
+                let func = (argl, arg2, ...argN) => expression
                 if one arg : let func = arg => expression
                 if no  arg : let func = () => expression
 (argument)      contain all the arg that got passed to the function
@@ -203,3 +204,22 @@ instanceof
                 The await keyword makes the function pause the execution and wait for a resolved promise before it continues
                 (look in the code for exsample (async and await) to find it)
                 for errors we use try and catch   
+
+express library
+                node js library to import first in terminal 
+                npm init -y //this gona make a file to donload the library or any other library
+                npm install express --save 
+                const express = require('express'); //to import the library to the app or we can use import express  from 'express';
+                const app = express();
+how to use http methods (from express library)
+(GET)           Retrive data - and create a  location like (/usere or /homePage)
+                app.get('Loction', arrow function); 
+                app.get('/hello',(req,res) => {res.send('hello')});
+(POST)          create data
+                app.post('/hello',(req,res) => {
+                    res.send('post')});
+(PUT)
+(DELET)
+
+
+

@@ -11,12 +11,24 @@ let hello = [] ;
 // GET - Retrive data
 // app.get('Loction', arraw function)
 app.get('/hello',(req,res) => {
-    res.send('get');
+    if(hello.length==0){
+        res.status(404).send('no hello to you')
+        return
+    }
+    res.status(200).send(hello);
 });
 
 // POST - crate data 
 app.post('/hello',(req,res) => {
-    res.send('post')
+    //check if the id already exist
+    const helloID = req.body;
+    const findID = hello.find((x) => x.id === helloID.id)
+    if (findID){
+        res.status(400).send('already said hello')
+        return
+    }
+    hello.push(helloID);
+    res.status(201).send('post');
 });
 
 // PUT
