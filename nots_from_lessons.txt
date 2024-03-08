@@ -218,8 +218,34 @@ how to use http methods (from express library)
 (POST)          create data
                 app.post('/hello',(req,res) => {
                     res.send('post')});
-(PUT)
-(DELET)
+normal server and reload when save setting
+                "test": "echo \"Error: no test specified\" && exit 1"
+                "start" : "nodemon server.js" //// npm run start
 
+(axios)         just better fetch 
 
+(cookies)       used to store some info (like language and login status) in user pc 
+                document.cookie = `cookieName = cookieValue ; DateExpires`;
+                document.cookie = `email=spider@js.com;${new Date(2030,1,1).toUTCString()}`;
+                to get cookie from console (document.cookie)
+more info       Types are temporary and permanent
+                This data is stored in strings only
+                Size ranges from 4kb to 1m
+                It expires at a specified time
 
+web storage API
+                (sessionStorage same thing as localStorage just ching the name for using)
+(.setItem)      for saving item
+                localStorage.setItem('keyName','value');
+                localStorage.setItem('name','wessam');
+(.getItem)      to get key item value to a variable
+                let name = localStorage.getItem('name');
+(.removeItem)   remove item by the key
+                localStorage.removeItem('name');
+(.clear)        clear everyting
+                localStorage.clear();
+more info       
+                type local         and         session
+                strings only       and     different for every browser
+                    Permanent      and     temporary
+                Intermediate data  and     user data
