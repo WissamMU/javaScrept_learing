@@ -1,3 +1,4 @@
+js (JavaScript)
 This file for that I didnt know or woth to mention
 
 (;)             Semicolon is optional but its better to use it because some time u need it 

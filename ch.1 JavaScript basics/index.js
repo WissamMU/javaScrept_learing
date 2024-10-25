@@ -11,7 +11,7 @@ try {
 //                The Promise object supports two properties: state and result.
 //                While a Promise object is "pending" (working), the result is undefined.
 //                When a Promise object is "fulfilled", the result is a value. 
-//               When a Promise object is "rejected", the result is an error object.
+//                When a Promise object is "rejected", the result is an error object.
 //(.then)         if the promise fulfilled
 //(.catch)        if the promise rejected
 let wait = time => new Promise(
@@ -20,6 +20,7 @@ let wait = time => new Promise(
    setTimeout(resolve,time);
 }
 );
+
 wait(6000).then(()=> console.log('hello')).catch(err=>console.log(err))
 //async and await
 async function HelloWorld(){

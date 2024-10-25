@@ -6,6 +6,6 @@
 
 📖 Chapter one basic of JavaScript (done) 
 
-📝 Im taking basics of web development first (in progres)
+📝 Im taking basics of web development first (done)
 
-📚 Chapter two react.js (didnt start yet)
+📚 Chapter two react.js (in progres)
