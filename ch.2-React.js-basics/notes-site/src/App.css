@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root{
+  --primary-color: #D9D9D9; 
+  --secondary-color: #e3e2e2; 
+  --text-color: #6A6A6A; 
+  --hovering-color: white; 
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: var(--primary-color);
+  font-family:"Rubik", sans-serif;
+  color: var(--text-color);
+
+}
+
+
+.preview-section{
+  background-color: var(--secondary-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 80vw;
+  height: 95vh;
+}
+
+.notes-list{
+  list-style: none;
+  padding: 0;
+}
+.notes-list .note-item{
+  padding: 4px;
+  text-align: center;
+  margin: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.add-btn{
+  padding: 4px;
+  text-align: center;
+  margin: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  width: 92% ;
+}
+.add-btn:hover{
+  background-color: var(--hovering-color);
+}
+.note-title::after{
+  content: "";
+  padding: 5px;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid var(--text-color); /* Adjust the border as needed */
+  margin-bottom: 25px; /* Adjust the margin as needed */
+}

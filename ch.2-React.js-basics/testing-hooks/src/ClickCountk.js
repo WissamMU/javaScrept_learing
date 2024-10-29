@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';//add use effect here 
 
 const ClickCount = () => {
-    // to use use state we make array first is verable name and the second
-    // is function that goning change the verable and useState(start value to the var)
+    // to use use state we make array first is variable name and the second
+    // is function that goning change the variable and useState(start value to the var)
     const [counter, setCounter] = useState(0);
 
     // first argument is callback function that will be called 
