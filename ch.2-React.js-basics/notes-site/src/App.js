@@ -1,9 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [selectedTheme, setSelectedTheme] = useState(localStorage.getItem('selectedTheme') || 'light');
+
+  const toggleTheme = () => {
+    setSelectedTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', selectedTheme);
+    localStorage.setItem('selectedTheme', selectedTheme);
+  }, [selectedTheme]);
+
 
   const getAddNote = () => {
     return (
@@ -57,6 +68,22 @@ function App() {
       <div className='row'>
         <div className="notes-section col-md-2">
           <button className="btn add-btn">أضافة ملاحظة</button>
+          <label className="add-btn">
+        <input
+          className='btn add-btn'
+          id='darkModeToggle'
+          onChange={toggleTheme}
+          type='checkbox'
+          defaultChecked={selectedTheme === 'dark'}
+        />
+        <span>
+          {selectedTheme === 'dark' ? (
+            <i className="fas fa-moon"></i>
+          ) : (
+            <i className="fas fa-sun"></i>
+          )}
+        </span>
+      </label>
           <ul className="notes-list">
             <li className="note-item">ملاحظة رقم #1</li>
             <li className="note-item">ملاحظة رقم #2</li>

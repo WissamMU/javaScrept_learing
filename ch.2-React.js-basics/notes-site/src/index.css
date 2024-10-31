@@ -1,3 +1,20 @@
+:root {
+  --primary-color: #cacaca;
+  --secondary-color: #e3e2e2;
+  --text-color: #6A6A6A;
+  --hovering-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+[data-theme='dark']{
+  --primary-color: #363A3D;
+  --secondary-color: #282B2D;
+  --text-color: #E8E6E3;
+  --hovering-color: black;
+}
+
 body {
   margin: 0;
   padding: 0;
