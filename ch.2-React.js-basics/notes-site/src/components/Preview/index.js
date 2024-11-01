@@ -1,8 +1,10 @@
 import React from "react";
 
-const Preview = (props) =>(
-    <div className="preview-section col-md-9">
-        {props.children}
+const Preview = (props = 'wessam') => (
+    <div className="preview-section col-lg-9 col-sm-8">
+        <div>
+                {props.children}
+        </div>
     </div>
 )
 
