@@ -107,6 +107,12 @@ body {
   align-items: center !important;
 }
 
+
+.note-content {
+  white-space: wrap;
+  word-wrap: break-word;
+}
+
 /* adding note */
 
 .form-input {
