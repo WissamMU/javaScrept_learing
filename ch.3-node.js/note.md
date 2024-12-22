@@ -223,26 +223,47 @@ app.use((req, res, next) => {
 
 **Creation:**
 
-* When a user successfully authenticates (e.g., by logging in), the server generates a JWT. 
-* This JWT contains claims about the user (like their ID, username, roles, and expiration time).
-* The server signs this JWT using a secret key known only to itself, ensuring its integrity.
+- When a user successfully authenticates (e.g., by logging in), the server generates a JWT.
+- This JWT contains claims about the user (like their ID, username, roles, and expiration time).
+- The server signs this JWT using a secret key known only to itself, ensuring its integrity.
 
 **Transmission:**
 
-* The server sends the JWT to the client (e.g., in the response to the login request).
-* The client stores the JWT (e.g., in a cookie or local storage) and includes it in subsequent requests to protected resources.
+- The server sends the JWT to the client (e.g., in the response to the login request).
+- The client stores the JWT (e.g., in a cookie or local storage) and includes it in subsequent requests to protected resources.
 
 **Verification:**
 
-* When the client sends a request with the JWT, the server receives it.
-* The server verifies the JWT's signature using the same secret key used during creation.
-* If the signature is valid, the server decodes the JWT and extracts the user's information.
-* This allows the server to authenticate and authorize the user's access to the requested resource.
+- When the client sends a request with the JWT, the server receives it.
+- The server verifies the JWT's signature using the same secret key used during creation.
+- If the signature is valid, the server decodes the JWT and extracts the user's information.
+- This allows the server to authenticate and authorize the user's access to the requested resource.
 
 **Key Advantages:**
 
-* **Security:** Digitally signed to prevent tampering.
-* **Statelessness:** No need for the server to maintain session data for each user.
-* **Flexibility:** Can be used for various authentication and authorization scenarios.
+- **Security:** Digitally signed to prevent tampering.
+- **Statelessness:** No need for the server to maintain session data for each user.
+- **Flexibility:** Can be used for various authentication and authorization scenarios.
 
 Essentially, JWTs act as secure digital passports, enabling seamless and secure user interactions within web applications.
+
+for example look in express folder
+
+## Express Generator
+
+- is a command-line tool that streamlines the creation of Express.js web applications. It generates a basic project skeleton with pre-defined files and directories, providing developers with a ready-to-use foundation for their projects, enabling them to quickly start building their application logic without the overhead of initial setup.
+
+# rate movies api
+
+- small api to rate movies
+
+1. after setup using express generator add those
+  - npm i -D bcrypt dotenv jsonwebtoken mongoose
+2. add .env file for environment variables note need require('dotenv').config(); in bin/www
+3. connect with mongoose
+4. made models for users and movies
+5. Registration with JWT and Authentication with middleware
+6. route the authenticated with routes/auth.js 
+7. for organization made file (controllers) 
+8. inside conntrollers added the ability to login in register or check your personal info
+9. manged Movies 
