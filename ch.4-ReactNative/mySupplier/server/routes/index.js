@@ -1,0 +1,9 @@
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', function (req, res){
+    res.json({messag: "Hello, world!"});
+})
+
+module.exports = router;
