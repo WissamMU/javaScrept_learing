@@ -14,7 +14,7 @@ const User = db.define('user', {
         type: Sequelize.DataTypes.STRING
     },
     userType: {
-        type: Sequelize.DataTypes.ENUM('doctor', 'normal')
+        type: Sequelize.DataTypes.ENUM('Supplier', 'Client')
     },
     latitude: {
         type: Sequelize.DataTypes.FLOAT
