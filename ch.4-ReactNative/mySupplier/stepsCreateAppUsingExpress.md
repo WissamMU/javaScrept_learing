@@ -1,3 +1,5 @@
+# backend
+
 1. creat folder with 2 sub folders - server - frontend
 2. in server folder add npm init
 3. in server npm i express
@@ -339,3 +341,26 @@ app.listen(port, () => {
       }
     };
     ```
+
+16. update and delete using update server/controller/userController
+
+# front end
+
+1. create new folder for frontend and install
+
+   - **npx create-expo-app myAppName --template blank@50** - version after 50 use typescript
+
+2. install necessary packages and set up basic structure
+   React Native Elements provides a collection of ready-to-use UI components like buttons, inputs, and lists, speeding up development with pre-styled and cross-platform elements.
+
+   - npm install react-native-elements
+   - npm install react-native-vector-icons
+
+     React Navigation simplifies navigation within your React Native app. It handles moving between screens, providing features like stacks, tabs, and drawers for a smooth user experience.
+
+   - npx expo install react-navigation 
+   - npm install @react-navigation/native
+   - npx expo install react-native-screens react-native-safe-area-context
+   - npm install @react-navigation/native-stack
+
+3.

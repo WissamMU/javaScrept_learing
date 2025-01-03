@@ -5,13 +5,13 @@ const models = require('../models');
 const Op = Sequelize.Op;
 
 exports.index = async (req, res) => {
-    let {q} = req.query;
-    const searchQuery = q ? {name: {[Op.like]: `%${q.replace(' ', '')}%`}}: {};
+    let { q } = req.query;
+    const searchQuery = q ? { name: { [Op.like]: `%${q.replace(' ', '')}%` } } : {};
     try {
         const suppliers = await models.User.findAll({
-            where: {userType: 'supplier', ...searchQuery},
-            include: [{model: models.Profile, as: "profile"}],
-            attributes: {exclude: ['password']}
+            where: { userType: 'Supplier', ...searchQuery },
+            include: [{ model: models.Profile, as: "profile" }],
+            attributes: { exclude: ['password'] }
         })
 
         res.status(200).json(suppliers)

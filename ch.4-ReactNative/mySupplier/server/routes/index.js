@@ -15,6 +15,8 @@ router.post("/account/signup", userValidatorRules(), validate,  userController.r
 router.post("/account/login" , userController.login)
 router.get("/account/me", isLoggedIn, userController.me)
 router.get("/account/profile", isLoggedIn, userController.getProfile)
+router.post("/account/update", isLoggedIn, userController.updateProfile)// take current user id and update profile
+router.post("/account/delete", isLoggedIn, userController.deleteProfile)// take current user id and delete profile
 
 
 router.get("/supplier", supplierController.index)

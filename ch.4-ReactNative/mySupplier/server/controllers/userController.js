@@ -6,7 +6,7 @@ const jsonwebtoken = require('jsonwebtoken')
 
 exports.register = async (req, res) => {
     // destructuring request body to get the required data
-    const {name, email, password, userType, location, specialization, address, workingHours, phone} = req.body;
+    const { name, email, password, userType, location, specialization, address, workingHours, phone } = req.body;
 
     // asynchronous expressions so we use try/catch
     try {
@@ -34,19 +34,19 @@ exports.register = async (req, res) => {
 
         res.status(200).json({ message: 'تم انشاء الحساب' })
     } catch (err) {
-        res.status(500).json({ error: err.message })
+        res.status(500).json({ error: err.message + "ssss" })
     }
 
 
 }
 
 exports.login = async (req, res) => {
-    const {email, password} = req.body;
+    const { email, password } = req.body;
 
     try {
-        const user = await models.User.findOne({where: {email}})
+        const user = await models.User.findOne({ where: { email } })
 
-        if(!user) {
+        if (!user) {
             return res.status(401).json({
                 message: "البريد الإلكتروني أو كلمة المرور غير صحيحين"
             })
@@ -54,15 +54,15 @@ exports.login = async (req, res) => {
 
         const authSuccess = await bcryptjs.compare(password, user.password)
 
-        if(!authSuccess) { 
+        if (!authSuccess) {
             return res.status(401).json({
                 message: "البريد الإلكتروني أو كلمة المرور غير صحيحين"
             })
         }
 
-        const token = jsonwebtoken.sign({id: user.id, name: user.name, email: user.email}, process.env.JWT_SECRET);
+        const token = jsonwebtoken.sign({ id: user.id, name: user.name, email: user.email }, process.env.JWT_SECRET);
 
-        res.status(200).json({accessToken:  token})
+        res.status(200).json({ accessToken: token })
     } catch (e) {
         res.status(500).json({ message: "خطأ في الخادم" });
     }
@@ -76,9 +76,9 @@ exports.me = (req, res) => {
 exports.getProfile = async (req, res) => {
     try {
         const result = await models.User.findOne({
-            where: {id: req.currentUser.id},
-            include: [{model: models.Profile, as: "profile"}],
-            attributes: {exclude: ["password"]}
+            where: { id: req.currentUser.id },
+            include: [{ model: models.Profile, as: "profile" }],
+            attributes: { exclude: ["password"] }
         })
 
         res.status(200).json(result)
@@ -86,3 +86,61 @@ exports.getProfile = async (req, res) => {
         res.status(500).json(e)
     }
 }
+
+exports.updateProfile = async (req, res) => {
+    // destructuring request body to get the required data
+    const { name, email, password, userType, location, specialization, address, workingHours, phone } = req.body;
+
+    // asynchronous expressions so we use try/catch
+    try {
+        // crypting password
+        const hashPassword = await bcryptjs.hash(password, 10)
+        // updatte user 
+        const user = await models.User.update({
+            name,
+            email,
+            password: hashPassword,
+            userType,
+            latitude: location.latitude,
+            longitude: location.longitude
+        }, {
+            // taking the current user id for editing
+            where: {
+                id: req.currentUser.id
+            }
+        })
+        // suppliers
+        if (userType === 'Supplier') {
+            const profile = await models.Profile.update({
+                userId: user.id,
+                specialization,
+                address,
+                workingHours,
+                phone
+            }, {
+                where: {
+                    userId: req.currentUser.id
+                }
+            })
+        }
+
+        res.status(200).json({ message: 'تم تحديث المعلومات' })
+    } catch (err) {
+        res.status(500).json({ error: err.message })
+    }
+}
+
+// delete user
+exports.deleteProfile = async (req, res) => {
+    try {
+      const user = await models.User.destroy({
+        where: { id: req.currentUser.id },
+      });
+  
+      res.status(200).json({
+        message: "تم حذف الحساب بنجاح"
+      });
+    } catch (e) {
+      res.status(500).json(e);
+    }
+  };
