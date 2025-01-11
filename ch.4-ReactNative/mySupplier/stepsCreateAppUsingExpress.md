@@ -355,6 +355,7 @@ app.listen(port, () => {
 
    - npm install react-native-elements
    - npm install react-native-vector-icons
+   - npm install react-native-safe-area-context
 
      React Navigation simplifies navigation within your React Native app. It handles moving between screens, providing features like stacks, tabs, and drawers for a smooth user experience.
 
@@ -363,4 +364,9 @@ app.listen(port, () => {
    - npx expo install react-native-screens react-native-safe-area-context
    - npm install @react-navigation/native-stack
 
-3.
+3. === I forgot to continue I will Maybe do it later ===
+4. create component for input called ProfileForm.js under components folder
+    - first we need validation library *formik* in this case  npm install formik --save
+        - Formik is a React library that simplifies form handling. It manages form state, handles user input, and validates data, making form creation easier and more efficient in your React projectsF
+    - and we use yep for validation npm i yup
+        - Yup is a JavaScript library for defining and validating data shapes
