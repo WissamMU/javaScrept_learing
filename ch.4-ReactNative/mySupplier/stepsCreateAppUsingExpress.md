@@ -370,3 +370,10 @@ app.listen(port, () => {
         - Formik is a React library that simplifies form handling. It manages form state, handles user input, and validates data, making form creation easier and more efficient in your React projectsF
     - and we use yep for validation npm i yup
         - Yup is a JavaScript library for defining and validating data shapes
+    - more details in components/ProfileForm.js
+5. connect backend with frontend using axios library npm install axios
+    - Axios is a library for making HTTP requests in JavaScript. It simplifies fetching data from APIs with its easy-to-use interface and promise-based approach.
+    1. create two file under config folder one urls.js for url and axios.js for the library and crete an instance to set api url
+    2. import axios in signup.js 
+    3. using expo-location for location
+6. use components/Loader.js and Alert.js in Signup.js

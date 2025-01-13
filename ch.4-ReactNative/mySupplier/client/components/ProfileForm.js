@@ -1,44 +1,45 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import styles from '../styles/authStyles'
-import { Text, Input, CheckBox, Button } from 'react-native-elements';
-
+import styles from '../styles/authStyles'; // Import styles for the form components
+import { Text, Input, CheckBox, Button } from 'react-native-elements'; // Import UI components from react-native-elements
 export default function ProfileForm(props) {
 
-    const validationSchema = yup.object().shape({
-        name: yup
-            .string()
-            .required('اسم المستخدم مطلوب'),
-        email: yup
-            .string()
-            .email("يجب إدخال بريد إلكتروني صحيح")
-            .required('البريد الإلكتروني مطلوب'),
-        password: yup
-            .string()
-            .required('يجب عليك إدخال كلمة مرور صالحة')
-            .min(5, "يجب أن تكون كلمة المرور أكثر من خمسة محارف"),
-        userType: yup.boolean(),
-        specialization: yup.string().when('userType', {
-            is: true,
-            then: (schema) => schema.required("يجب عليك ادخال التخصص")
-        }),
-        address: yup.string().when('userType', {
-            is: true,
-            then: (schema) => schema.required('يجب عليك إدخال العنوان'),
-        }),
-        phone: yup.string().when('userType', {
-            is: true,
-            then: (schema) => schema.required('يجب عليك إدخال رقم الهاتف'),
-        }),
-        workingHours: yup.string().when('userType', {
-            is: true,
-            then: (schema) => schema.required('يجب عليك إدخال ساعات العمل'),
-        }),
+  // Define validation schema for form fields
+  const validationSchema = yup.object().shape({
+    name: yup
+      .string()
+      .required('اسم المستخدم مطلوب'), // Username is required
+    email: yup
+      .string()
+      .email("يجب إدخال بريد إلكتروني صحيح") // Must be a valid email
+      .required('البريد الإلكتروني مطلوب'), // Email is required
+    password: yup
+      .string()
+      .required('يجب عليك إدخال كلمة مرور صالحة') // Password is required
+      .min(5, "يجب أن تكون كلمة المرور أكثر من خمسة محارف"), // Minimum 5 characters
 
-    })
+    // Conditionally required fields based on user type selection
+    userType: yup.boolean(),
+    specialization: yup.string().when('userType', {
+      is: true,
+      then: (schema) => schema.required("يجب عليك ادخال التخصص"), // Specialization required for suppliers
+    }),
+    address: yup.string().when('userType', {
+      is: true,
+      then: (schema) => schema.required('يجب عليك إدخال العنوان'), // Address required for suppliers
+    }),
+    phone: yup.string().when('userType', {
+      is: true,
+      then: (schema) => schema.required('يجب عليك إدخال رقم الهاتف'), // Phone number required for suppliers
+    }),
+    workingHours: yup.string().when('userType', {
+      is: true,
+      then: (schema) => schema.required('يجب عليك إدخال ساعات العمل'), // Working hours required for suppliers
+    }),
+  });
 
     return (
-        <Formik
+        <Formik  // Formik is used for managing form state, validation, and submission.
             initialValues={{
                 name: props.user?.name || '',
                 email: props.user?.email || '',
@@ -51,7 +52,7 @@ export default function ProfileForm(props) {
                 latitude: props.user?.latitude || null,
                 longitude: props.user?.longitude || null
             }}
-            validationSchema={validationSchema}
+            validationSchema={validationSchema} 
             onSubmit={values => props.submit(values)}
         >
             {
