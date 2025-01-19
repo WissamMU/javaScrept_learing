@@ -10,6 +10,7 @@ export default function HomeScreen(props) {
             <Text>Home screen</Text>
             <Button title="go to supplier" onPress={() => { navigation.navigate('Supplier') }}/>
             <Button title="sign up page" onPress={() => { navigation.navigate('SignUp') }}/>
+            <Button title="sign In page" onPress={() => { navigation.navigate('SignIn') }}/>
         </View>
     );
 }

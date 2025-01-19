@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'; // 
 import HomeScreen from './screens/Home'; // Import the HomeScreen component.
 import SupplierScreen from './screens/Supplier'; // Import the SupplierScreen component.
 import SignUpScreen from './screens/SignUp'; // Import the SignUpScreen component.
+import SignInScreen from './screens/SignIn'; // Import the SigInpScreen component.
 
 const Stack = createNativeStackNavigator(); // Create an instance of the stack navigator.
 
@@ -44,6 +45,13 @@ export default function App() {
           component={SignUpScreen} 
           options={{
             title: "sign up page" // Set the title for the SignUpScreen.
+          }} 
+        />
+        <Stack.Screen 
+          name="SignIn" 
+          component={SignInScreen} 
+          options={{
+            title: "sign in page" // Set the title for the SignUpScreen.
           }} 
         />
       </Stack.Navigator>
