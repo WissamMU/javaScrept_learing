@@ -8,6 +8,7 @@ import HomeScreen from './screens/Home'; // Import the HomeScreen component.
 import SupplierScreen from './screens/Supplier'; // Import the SupplierScreen component.
 import SignUpScreen from './screens/SignUp'; // Import the SignUpScreen component.
 import SignInScreen from './screens/SignIn'; // Import the SigInpScreen component.
+import ProfileScreen from './screens/Profile';
 
 const Stack = createNativeStackNavigator(); // Create an instance of the stack navigator.
 
@@ -52,6 +53,13 @@ export default function App() {
           component={SignInScreen} 
           options={{
             title: "sign in page" // Set the title for the SignUpScreen.
+          }} 
+        />
+        <Stack.Screen 
+          name="Profile" 
+          component={ProfileScreen} 
+          options={{
+            title: "Profile page" // Set the title for the SignUpScreen.
           }} 
         />
       </Stack.Navigator>

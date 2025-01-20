@@ -345,7 +345,7 @@ app.listen(port, () => {
 16. update and delete using update server/controller/userController
 
 # front end
-
+- I didn't focus on the steps here so there's a lot missing
 1. create new folder for frontend and install
 
    - **npx create-expo-app myAppName --template blank@50** - version after 50 use typescript
@@ -377,3 +377,4 @@ app.listen(port, () => {
     2. import axios in signup.js 
     3. using expo-location for location
 6. use components/Loader.js and Alert.js in Signup.js
+7. client/screens/SignIn.js check there
