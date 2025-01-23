@@ -1,26 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Button, Text } from 'react-native-elements';
+import styles from '../styles/homeStyles'
 
 export default function HomeScreen(props) {
-    const { navigation } = props;
-    return (
-        <View style={styles.container}>
-            <Text>Home screen</Text>
-            <Button title="go to supplier" onPress={() => { navigation.navigate('Supplier') }}/>
-            <Button title="sign up page" onPress={() => { navigation.navigate('SignUp') }}/>
-            <Button title="sign In page" onPress={() => { navigation.navigate('SignIn') }}/>
-            <Button title="Profile page" onPress={() => { navigation.navigate('Profile') }}/>
-        </View>
-    );
-}
+  const { navigation } = props;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+  const [token, setToken] = useState('');
+
+
+  useEffect(() => {
+    const refreshToken = navigation.addListener('focus', () => {
+      _checkToken();
+    })
+    return refreshToken
+  }, [navigation])
+
+  const _checkToken = async () => {
+    const token = await AsyncStorage.getItem('accessToken')
+    setToken(token)
+  }
+
+  return (
+    <ImageBackground
+      source={require('../assets/home-bg.jpg')}
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Text style={styles.title}>أهلًا بك في تطبيق موردي</Text>
+        <Text style={styles.text}>التطبيق الأول للربط بين العملاء والموردين</Text>
+        {token ?
+          <>
+            <Button title="استعرض قائمة الموردين" onPress={() => navigation.navigate('Doctors')} />
+            <Button type='clear' title="الصفحة الشخصية" onPress={() => navigation.navigate('Profile')}>
+              <Text style={styles.labelButton}>استعرض الملف الشخصي</Text>
+            </Button>
+          </>
+          :
+          <>
+            <Button title="تسجيل الدخول" onPress={() => navigation.navigate('SignIn')} />
+            <Button type='clear' title="تسجيل مستخدم جديد" onPress={() => navigation.navigate('SignUp')}>
+              <Text style={styles.labelButton}>إنشاء حساب جديد</Text>
+            </Button>
+          </>
+        }
+      </View>
+    </ImageBackground>
+  );
+}
