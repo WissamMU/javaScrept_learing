@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native'; // Import the main navigation container.
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; // Import the stack navigator component.
 import HomeScreen from './screens/Home'; // Import the HomeScreen component.
-import SupplierScreen from './screens/Supplier'; // Import the SupplierScreen component.
+import SupplierScreen from './screens/Suppliers'; // Import the SupplierScreen component.
 import SignUpScreen from './screens/SignUp'; // Import the SignUpScreen component.
 import SignInScreen from './screens/SignIn'; // Import the SigInpScreen component.
 import ProfileScreen from './screens/Profile';

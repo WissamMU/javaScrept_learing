@@ -36,7 +36,7 @@ export default function HomeScreen(props) {
         <Text style={styles.text}>التطبيق الأول للربط بين العملاء والموردين</Text>
         {token ?
           <>
-            <Button title="استعرض قائمة الموردين" onPress={() => navigation.navigate('Doctors')} />
+            <Button title="استعرض قائمة الموردين" onPress={() => navigation.navigate('Supplier')} />
             <Button type='clear' title="الصفحة الشخصية" onPress={() => navigation.navigate('Profile')}>
               <Text style={styles.labelButton}>استعرض الملف الشخصي</Text>
             </Button>
