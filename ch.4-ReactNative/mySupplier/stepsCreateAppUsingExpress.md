@@ -378,3 +378,4 @@ app.listen(port, () => {
     3. using expo-location for location
 6. use components/Loader.js and Alert.js in Signup.js
 7. client/screens/SignIn.js check there
+8. suppliers list at Suppliers.js

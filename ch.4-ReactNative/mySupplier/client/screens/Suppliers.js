@@ -13,7 +13,7 @@ import { transformName } from '../config/helpers';
 import styles from '../styles/doctorsStyles';
 import { ListItem, Text, Avatar, SearchBar } from 'react-native-elements';
 import TouchableScale from 'react-native-touchable-scale';
-// import SupplierDetails from './DoctorDetails';
+import SupplierDetails from './SupplierDetails';
 
 export default function SuppliersScreen() {
   const [loading, setLoading] = useState(false);
@@ -56,10 +56,10 @@ export default function SuppliersScreen() {
       <Loader loading={loading} title="جاري إحضار الأطباء" />
       <ScrollView>
 
-        {/* <SupplierDetails
+        <SupplierDetails
         selectedSupplier={selectedSupplier}
         closeModal={() => setSelectedSupplier(null)}
-        /> */}
+        />
         <KeyboardAvoidingView behavior='padding' enabled>
           <SearchBar
           placeholder='أبحث هنا ...'
